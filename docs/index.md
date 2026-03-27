@@ -1,8 +1,7 @@
 ---
-# Пустой front matter обязателен, чтобы Jekyll обработал этот файл
 ---
 
-# Архив текстов
+# Архив постов из Telegram-канала "Елена Панина"
 
 Всего файлов: {{ site.pages | where_exp: "item", "item.path contains '.md'" | size }}
 

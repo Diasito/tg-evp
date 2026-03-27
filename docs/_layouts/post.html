@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архив постов из Telegram-канала "Елена Панина"</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <div class="container">
+        <div class="post-meta">
+            <p><strong>Название:</strong> {{ page.title }}</p>
+            <p><strong>ID:</strong> {{ page.id }}</p>
+            <p><strong>Дата:</strong> 
+            {% assign d = page.date | date: "%d" %}
+            {% assign m = page.date | date: "%m" %}
+            {% assign y = page.date | date: "%Y" %}
+            {% assign time = page.date | date: "%H:%M:%S" %}
+            {% assign months = "января,февраля,марта,апреля,мая,июня,июля,августа,сентября,октября,ноября,декабря" | split: "," %}
+            {% assign month_name = months[m | minus: 1] %}
+            {{ d | plus: 0 }} {{ month_name }} {{ y }} года, {{ time }}
+            </p>
+            <p><strong>Ссылка на пост:</strong> <a href="{{ page.source }}" target="_blank" rel="noopener noreferrer">{{ page.source }}</a></p>
+        </div>
+        <hr>
+        {{ content }}
+    </div>
+</body>
+</html>

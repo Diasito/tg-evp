@@ -8,7 +8,7 @@
 <ul>
 {% for page in site.pages %}
   {% if page.path contains '.md' and page.path != 'index.md' %}
-    <li><a href="{{ page.url | relative_url }}">{{ page.name }}</a></li>
+    <li><a href="{{ page.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ page.name }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>

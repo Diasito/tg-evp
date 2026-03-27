@@ -1,0 +1,13 @@
+.git/
+.vscode/
+scripts/
+*.json
+*.jsonl
+*.log
+*.bak
+*.tmp
+*.pyc
+__pycache__/
+node_modules/
+.DS_Store
+Thumbs.db

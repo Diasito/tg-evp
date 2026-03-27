@@ -13,18 +13,13 @@
             <p><strong>Название:</strong> {{ page.title }}</p>
             <p><strong>ID:</strong> {{ page.id }}</p>
             <p><strong>Дата:</strong> 
-            {% assign date_parts = page.date | split: "T" %}
-            {% assign date_part = date_parts[0] | split: "-" %}
-            {% assign time_part = date_parts[1] | split: ":" %}
-            {% assign year = date_part[0] %}
-            {% assign month_num = date_part[1] | plus: 0 %}
-            {% assign day = date_part[2] | plus: 0 %}
-            {% assign hour = time_part[0] %}
-            {% assign minute = time_part[1] %}
-            {% assign second = time_part[2] %}
+            {% assign d = page.date | date: "%d" %}
+            {% assign m = page.date | date: "%m" %}
+            {% assign y = page.date | date: "%Y" %}
+            {% assign time = page.date | date: "%H:%M:%S" %}
             {% assign months = "января,февраля,марта,апреля,мая,июня,июля,августа,сентября,октября,ноября,декабря" | split: "," %}
-            {% assign month_name = months[month_num | minus: 1] %}
-            {{ day }} {{ month_name }} {{ year }} года, {{ hour }}:{{ minute }}:{{ second }}
+            {% assign month_name = months[m | minus: 1] %}
+            {{ d | plus: 0 }} {{ month_name }} {{ y }} года, {{ time }}
             </p>
             <p><strong>Ссылка на пост:</strong> <a href="{{ page.source }}" target="_blank" rel="noopener noreferrer">{{ page.source }}</a></p>
         </div>

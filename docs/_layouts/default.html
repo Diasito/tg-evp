@@ -8,6 +8,24 @@
 </head>
 <body>
     <div class="container">
+        {% if page.title and page.id %}
+        <div class="post-meta">
+            <p><strong>Название:</strong> {{ page.title }}</p>
+            <p><strong>ID:</strong> {{ page.id }}</p>
+            <p><strong>Дата:</strong> 
+            {% assign d = page.date | date: "%d" %}
+            {% assign m = page.date | date: "%m" %}
+            {% assign y = page.date | date: "%Y" %}
+            {% assign time = page.date | date: "%H:%M:%S" %}
+            {% assign months = "января,февраля,марта,апреля,мая,июня,июля,августа,сентября,октября,ноября,декабря" | split: "," %}
+            {% assign month_name = months[m | minus: 1] %}
+            {{ d | plus: 0 }} {{ month_name }} {{ y }} года, {{ time }}
+            </p>
+            <p><strong>Ссылка на пост:</strong> <a href="{{ page.source }}" target="_blank" rel="noopener noreferrer">{{ page.source }}</a></p>
+        </div>
+        <hr>
+        {% endif %}
+        
         {{ content }}
     </div>
 </body>

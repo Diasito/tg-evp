@@ -3,6 +3,8 @@ kramdown:
   input: GFM
   hard_wrap: false
 
+frontmatter: toml
+
 # Все файлы используют layout default
 defaults:
   - scope:

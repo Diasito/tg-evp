@@ -1,0 +1,15 @@
+---
+# Пустой front matter обязателен, чтобы Jekyll обработал этот файл
+---
+
+# Архив текстов
+
+Всего файлов: {{ site.pages | where_exp: "item", "item.path contains '.md'" | size }}
+
+<ul>
+{% for page in site.pages %}
+  {% if page.path contains '.md' and page.path != 'index.md' %}
+    <li><a href="{{ page.url | relative_url }}">{{ page.name }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>

@@ -1,0 +1,15 @@
+# Указываем обработчик Markdown и его настройки
+markdown: kramdown
+kramdown:
+  input: GFM          # Включаем поддержку GitHub Flavored Markdown
+  hard_wrap: false    # Чтобы переносы строк не превращались в <br>
+
+# Эти настройки запрещают Jekyll игнорировать файлы с front matter
+include: ['*.md']
+
+# Это позволит нам создать список всех Markdown файлов на главной странице
+defaults:
+  - scope:
+      path: ""        # Применяется ко всем файлам в папке
+    values:
+      layout: "default" # Будет использовать шаблон из _layouts/default.html

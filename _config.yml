@@ -1,3 +1,6 @@
 markdown: kramdown
 kramdown:
   input: GFM
+theme: jekyll-theme-minimal
+title: Архив постов из ТГ-канала "Елена Панина"
+description: 12070 файлов из Telegram-канала

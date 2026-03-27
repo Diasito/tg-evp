@@ -18,7 +18,8 @@
             {% assign y = page.date | date: "%Y" %}
             {% assign time = page.date | date: "%H:%M:%S" %}
             {% assign months = "января,февраля,марта,апреля,мая,июня,июля,августа,сентября,октября,ноября,декабря" | split: "," %}
-            {% assign month_name = months[m | minus: 1] %}
+            {% assign month_index = m | plus: 0 | minus: 1 %}
+            {% assign month_name = months[month_index] %}
             {{ d | plus: 0 }} {{ month_name }} {{ y }} года, {{ time }}
             </p>
             <p><strong>Ссылка на пост:</strong> <a href="{{ page.source }}" target="_blank" rel="noopener noreferrer">{{ page.source }}</a></p>

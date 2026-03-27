@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Архив постов из Telegram-канала "Елена Панина"</title>
+    <title>{% if page.title %}{{ page.title }} — Архив постов из Telegram-канала "Елена Панина"{% else %}Архив постов из Telegram-канала "Елена Панина"{% endif %}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
@@ -27,7 +27,7 @@
         <hr>
         {% endif %}
         
-        {{ content }}
+        {{ content | replace: '<a href="', '<a target="_blank" rel="noopener noreferrer" href="' }}
     </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 
 # Архив постов из Telegram-канала "Елена Панина"
 
-Всего файлов: {{ site.pages | where_exp: "item", "item.path contains '.md'" | size }}
+Всего файлов: {{ site.pages | where_exp: "item", "item.path contains '.md'" | size | minus: 1 }}
 
 <ul>
 {% for page in site.pages %}
